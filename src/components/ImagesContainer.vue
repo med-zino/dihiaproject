@@ -3,10 +3,10 @@
     <div v-for="item in items" :key="item.id" class="item">
       <template v-if="item.id % 2 === 0">
         <img :src="item.imgSrc" :alt="'Image ' + item.id" class="item-image" data-aos="fade-right">
-        <div class="item-description" data-aos="fade-left">{{ item.description }}</div>
+        <div class="item-description" data-aos="fade-left"><p class="item-des-paragraph">{{ item.description }}</p></div>
       </template>
       <template v-else>
-        <div class="item-description" data-aos="fade-right">{{ item.description }}</div>
+        <div class="item-description" data-aos="fade-right"><p class="item-des-paragraph">{{ item.description }}</p></div>
         <img :src="item.imgSrc" :alt="'Image ' + item.id" class="item-image" data-aos="fade-left">
       </template>
     </div>
@@ -36,7 +36,7 @@ export default {
 .item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 20px; /* Spacing between items */
 }
 
@@ -50,12 +50,23 @@ export default {
 }
 
 .item-description {
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content, if needed */
+  height: 636px;
+  margin-top: -101px;
   flex-grow: 1;
   padding: 0 20px; /* Adjust spacing as needed */
   font-size: 18px; /* Bigger font size */
   max-width: 50%; /* Smaller width, adjust as needed */
   line-height: 1.8; /* Increased line spacing */
+  background: black;
+  color: white;
+  font-family: Georgia, serif ; /* Apply the Pacifico font */
 
 }
+
+
+
 
 </style>
